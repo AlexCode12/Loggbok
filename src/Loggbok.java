@@ -15,10 +15,7 @@ public class Loggbok {
         if (input == 1) {
             System.out.println("Här kommer loggboken att finnas.");
         } else if (input == 2) {
-            System.out.println("Skriv in ditt inlägg.");
-            userInput.add(sn.nextLine());
-
-
+            newFile(sn, userInput);
         } else if (input == 3) {
             System.out.println("Under construction.");
         } else if (input == 4) {
@@ -30,6 +27,20 @@ public class Loggbok {
             System.exit(0);
         } else {
             System.out.println("Detta är inget korrekt tecken.");
+        }
+    }
+
+    private static void newFile(Scanner sn, ArrayList<String> userInput) {
+        System.out.println("Skriv in ditt inlägg.");
+        System.out.println("Avsluta genom att trycka på enter (retur).");
+        userInput.add(sn.nextLine());
+        System.out.println("Vill du spara filen?");
+        System.out.println("1. Ja. 2. Nej.");
+        int saveInput = sn.nextInt();
+        if (saveInput == 1) {
+            System.out.println("Test");
+        } else {
+            System.out.println("Test");
         }
     }
 
