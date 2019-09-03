@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Loggbok {
@@ -5,20 +6,25 @@ public class Loggbok {
         Scanner sn = new Scanner(System.in);
         printMenu();
         selectOptions(sn);
-    }
 
+    }
     private static void selectOptions(Scanner sn) {
+        ArrayList<String> userInput = new ArrayList<String>();
         int input = sn.nextInt();
+        sn.nextLine();
         if (input == 1) {
             System.out.println("Här kommer loggboken att finnas.");
         } else if (input == 2) {
-            System.out.println("Det går inte att skriva inlägg just nu.");
+            System.out.println("Skriv in ditt inlägg.");
+            userInput.add(sn.nextLine());
+
+
         } else if (input == 3) {
-
+            System.out.println("Under construction.");
         } else if (input == 4) {
-
+            System.out.println("Under construction.");
         } else if (input == 5) {
-
+            System.out.println("Under construction");
         } else if (input == 6) {
             System.out.println("Tack, hejdå.");
             System.exit(0);
