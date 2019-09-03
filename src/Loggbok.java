@@ -10,7 +10,7 @@ public class Loggbok {
         }
     }
     static ArrayList<String> userInput = new ArrayList<String>();
-    private static void selectOptions(Scanner sn) {
+    private static void selectOptions(Scanner sn) { 
         int input = sn.nextInt();
         sn.nextLine();
         if (input == 1) {
