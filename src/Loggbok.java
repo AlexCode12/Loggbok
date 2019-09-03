@@ -4,16 +4,17 @@ import java.util.Scanner;
 public class Loggbok {
     public static void main(String[] args) {
         Scanner sn = new Scanner(System.in);
-        printMenu();
-        selectOptions(sn);
-
+        while (true) {
+            printMenu();
+            selectOptions(sn);
+        }
     }
+    static ArrayList<String> userInput = new ArrayList<String>();
     private static void selectOptions(Scanner sn) {
-        ArrayList<String> userInput = new ArrayList<String>();
         int input = sn.nextInt();
         sn.nextLine();
         if (input == 1) {
-            System.out.println("Här kommer loggboken att finnas.");
+            System.out.println(userInput);
         } else if (input == 2) {
             newFile(sn, userInput);
         } else if (input == 3) {
@@ -33,15 +34,9 @@ public class Loggbok {
     private static void newFile(Scanner sn, ArrayList<String> userInput) {
         System.out.println("Skriv in ditt inlägg.");
         System.out.println("Avsluta genom att trycka på enter (retur).");
-        userInput.add(sn.nextLine());
-        System.out.println("Vill du spara filen?");
-        System.out.println("1. Ja. 2. Nej.");
-        int saveInput = sn.nextInt();
-        if (saveInput == 1) {
-            System.out.println("Test");
-        } else {
-            System.out.println("Test");
-        }
+        String newFile = sn.nextLine();
+        userInput.add(newFile);
+
     }
 
     private static void printMenu() {
