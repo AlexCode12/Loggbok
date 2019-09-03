@@ -10,7 +10,7 @@ public class Loggbok {
         }
     }
     static ArrayList<String> userInput = new ArrayList<String>();
-    private static void selectOptions(Scanner sn) { 
+    private static void selectOptions(Scanner sn) { // Denna metod är till för alternativen på menyn, se printMenu.
         int input = sn.nextInt();
         sn.nextLine();
         if (input == 1) {
@@ -31,7 +31,7 @@ public class Loggbok {
         }
     }
 
-    private static void newFile(Scanner sn, ArrayList<String> userInput) {
+    private static void newFile(Scanner sn, ArrayList<String> userInput) { // Frågar användaren efter dess text, och lägger in det i Arraylisten.
         System.out.println("Skriv in ditt inlägg.");
         System.out.println("Avsluta genom att trycka på enter (retur).");
         String newFile = sn.nextLine();
@@ -39,7 +39,7 @@ public class Loggbok {
 
     }
 
-    private static void printMenu() {
+    private static void printMenu() { // Menyn.
         System.out.println("Välkommen till loggboken. Välj ett av alternativen nedan genom att skriva in dess siffra.");
         System.out.println("1. Visa loggboken." + "\n"
                 + "2. Lägg till ett inlägg." + "\n"
