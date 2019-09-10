@@ -28,6 +28,7 @@ public class LogEntry {
         return "\n LOGGBOK" + "\n {Inlägg skapades:  " + createdAt + ", \n Inlägg uppdaterades:  " + updatedAt + ", \n Meddelande: '" + message + '\'' + '}';
     }
     public void update(String newMessage) {
-        
+        this.message = newMessage;
+        updatedAt = new Date();
     }
 }

@@ -9,16 +9,25 @@ public class Loggbok {
             selectOptions(sn);
         }
     }
-    static ArrayList<LogEntry> userInput = new ArrayList<LogEntry>();
+    static ArrayList<LogEntry> userInputs = new ArrayList<LogEntry>();
     private static void selectOptions(Scanner sn) { // Denna metod är till för alternativen på menyn, se printMenu.
         int input = sn.nextInt();
         sn.nextLine();
         if (input == 1) {
-            System.out.println(userInput);
+            System.out.println(userInputs);
         } else if (input == 2) {
-            newFile(sn, userInput);
+            newFile(sn, userInputs);
         } else if (input == 3) {
-            System.out.println("Under construction.");
+
+            System.out.println("Välj vilket inlägg du vill uppdatera. ");
+            System.out.println(userInputs);
+            System.out.println("Välj ett inlägg genom att skriva in deras index, med start från 0.");
+            index(userInputs);
+            int elementAt = sn.nextInt();
+            sn.nextLine();
+            String newMessage = sn.nextLine();
+            userInputs.get(elementAt).update(newMessage);
+
         } else if (input == 4) {
             System.out.println("Under construction.");
         } else if (input == 5) {
@@ -29,6 +38,9 @@ public class Loggbok {
         } else {
             System.out.println("Detta är inget korrekt tecken.");
         }
+    }
+
+    private static void index(ArrayList<LogEntry> userInputs) {
     }
 
     private static void newFile(Scanner sn, ArrayList<LogEntry> userInput) { // Frågar användaren efter dess text, och lägger in det i Arraylisten.
