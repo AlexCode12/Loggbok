@@ -38,6 +38,7 @@ public class Loggbok {
         index(userInputs);
         int elementAt = sn.nextInt();
         sn.nextLine();
+        System.out.println("Skriv in det nya som ska sparas i filen.");
         String newMessage = sn.nextLine();
         userInputs.get(elementAt).update(newMessage);
     }
