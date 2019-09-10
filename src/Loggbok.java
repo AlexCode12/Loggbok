@@ -18,16 +18,7 @@ public class Loggbok {
         } else if (input == 2) {
             newFile(sn, userInputs);
         } else if (input == 3) {
-
-            System.out.println("Välj vilket inlägg du vill uppdatera. ");
-            System.out.println(userInputs);
-            System.out.println("Välj ett inlägg genom att skriva in deras index, med start från 0.");
-            index(userInputs);
-            int elementAt = sn.nextInt();
-            sn.nextLine();
-            String newMessage = sn.nextLine();
-            userInputs.get(elementAt).update(newMessage);
-
+            updatePost(sn);
         } else if (input == 4) {
             System.out.println("Under construction.");
         } else if (input == 5) {
@@ -38,6 +29,17 @@ public class Loggbok {
         } else {
             System.out.println("Detta är inget korrekt tecken.");
         }
+    }
+
+    private static void updatePost(Scanner sn) {
+        System.out.println("Välj vilket inlägg du vill uppdatera. ");
+        System.out.println(userInputs);
+        System.out.println("Välj ett inlägg genom att skriva in deras index, med start från 0.");
+        index(userInputs);
+        int elementAt = sn.nextInt();
+        sn.nextLine();
+        String newMessage = sn.nextLine();
+        userInputs.get(elementAt).update(newMessage);
     }
 
     private static void index(ArrayList<LogEntry> userInputs) {
