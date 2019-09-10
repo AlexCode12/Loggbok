@@ -1,4 +1,3 @@
-import java.util.Calendar;
 import java.util.Date;
 
 public class LogEntry {
@@ -26,11 +25,7 @@ public class LogEntry {
 
     @Override
     public String toString() {
-        return "LogEntry{" +
-                "createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", message='" + message + '\'' +
-                '}';
+        return "\n LOGGBOK" + "\n {Inlägg skapades:  " + createdAt + ", \n Inlägg uppdaterades:  " + updatedAt + ", \n Meddelande: '" + message + '\'' + '}';
     }
     public void update(String newMessage) {
         

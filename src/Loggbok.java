@@ -9,7 +9,7 @@ public class Loggbok {
             selectOptions(sn);
         }
     }
-    static ArrayList<String> userInput = new ArrayList<String>();
+    static ArrayList<LogEntry> userInput = new ArrayList<LogEntry>();
     private static void selectOptions(Scanner sn) { // Denna metod är till för alternativen på menyn, se printMenu.
         int input = sn.nextInt();
         sn.nextLine();
@@ -31,11 +31,11 @@ public class Loggbok {
         }
     }
 
-    private static void newFile(Scanner sn, ArrayList<String> userInput) { // Frågar användaren efter dess text, och lägger in det i Arraylisten.
+    private static void newFile(Scanner sn, ArrayList<LogEntry> userInput) { // Frågar användaren efter dess text, och lägger in det i Arraylisten.
         System.out.println("Skriv in ditt inlägg.");
         System.out.println("Avsluta genom att trycka på enter (retur).");
         String newFile = sn.nextLine();
-        userInput.add(newFile);
+        userInput.add(new LogEntry(newFile));
 
     }
 
