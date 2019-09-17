@@ -25,7 +25,13 @@ public class Loggbok {
         } else if (input == 4) {
             infoToFile();
         } else if (input == 5) {
-            System.out.println("Under Construction.");
+            DataInputStream txtIn;
+            String filenameTxt = "LoggEntrys.txt";
+            try {
+                txtIn = new DataInputStream(new BufferedInputStream(new FileInputStream(filenameTxt)));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         } else if (input == 6) {
             System.out.println("Tack, hejdå.");
             System.exit(0);
