@@ -23,23 +23,7 @@ public class Loggbok {
         } else if (input == 3) {
             updatePost(sn);
         } else if (input == 4) {
-            String filenameTxt = "LoggEntrys.txt";
-            DataOutputStream txtOut;
-            {
-                try {
-                    txtOut = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filenameTxt)));
-                    try {
-                        txtOut.writeBytes(String.valueOf(userInputs));
-                        txtOut.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-
-            }
-            System.out.println("Inlägget har sparats. \n ");
+            infoToFile();
         } else if (input == 5) {
             System.out.println("Under Construction.");
         } else if (input == 6) {
@@ -48,6 +32,25 @@ public class Loggbok {
         } else {
             System.out.println("Detta är inget korrekt tecken.");
         }
+    }
+
+    private static void infoToFile() {
+        String filenameTxt = "LoggEntrys.txt";
+        DataOutputStream txtOut;
+        {
+            try {
+                txtOut = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filenameTxt)));
+                try {
+                    txtOut.writeBytes(String.valueOf(userInputs));
+                    txtOut.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Inlägget har sparats. \n ");
     }
 
     private static void updatePost(Scanner sn) {
