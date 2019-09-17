@@ -31,4 +31,5 @@ public class LogEntry {
         this.message = newMessage;
         updatedAt = new Date();
     }
+
 }

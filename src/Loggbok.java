@@ -1,3 +1,7 @@
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,7 +13,9 @@ public class Loggbok {
             selectOptions(sn);
         }
     }
+
     static ArrayList<LogEntry> userInputs = new ArrayList<LogEntry>();
+
     private static void selectOptions(Scanner sn) { // Denna metod är till för alternativen på menyn, se printMenu.
         int input = sn.nextInt();
         sn.nextLine();
@@ -20,7 +26,16 @@ public class Loggbok {
         } else if (input == 3) {
             updatePost(sn);
         } else if (input == 4) {
-            System.out.println("Under construction.");
+            String filenameTxt = "LoggEntrys.txt";
+            DataOutputStream txtOut;
+
+            {
+                try {
+                    txtOut = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filenameTxt)));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
         } else if (input == 5) {
             System.out.println("Under construction");
         } else if (input == 6) {
