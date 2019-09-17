@@ -1,7 +1,4 @@
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -28,16 +25,23 @@ public class Loggbok {
         } else if (input == 4) {
             String filenameTxt = "LoggEntrys.txt";
             DataOutputStream txtOut;
-
             {
                 try {
                     txtOut = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filenameTxt)));
+                    try {
+                        txtOut.writeBytes(String.valueOf(userInputs));
+                        txtOut.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
+
             }
+            System.out.println("Inlägget har sparats. \n ");
         } else if (input == 5) {
-            System.out.println("Under construction");
+            System.out.println("Under Construction.");
         } else if (input == 6) {
             System.out.println("Tack, hejdå.");
             System.exit(0);
